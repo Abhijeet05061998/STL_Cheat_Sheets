@@ -1,0 +1,68 @@
+Vectors in C++ are similar to dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container.
+
+The major problem with arrays in C++ is the ability to resize. No matter, if you have allocated an array using pointers, you need to know the capacity of that array beforehand, and this creates either wastage of some space or shortage of space once the array gets completely filled.
+
+Vectors in C++ comes with a lot of advantages which are discussed below:
+Dynamic Size: Vectors are dynamic in nature, so we can insert as many elements as we want at anytime.
+Rich Library Functions: Vectors in C++ comes with a lot of built-in functions to perform some basic operations like insert, delete, find, sort, etc. There are a lot of other functions also which we will see in upcoming lesson.
+No need to pass size: One more advantage of vectors is, we don't need to pass an extra variable named size to the functions whenever we are passing a vector to the functions. Size of a vector can be calculated easily as vector_name.size().
+Can be returned from a function: Arrays created locally inside a function, cannot be returned from that function. The below code snippet is incorrect:
+int func()
+{
+    int arr[100];
+
+    return arr; // This is not valid, and will generate an error
+}
+However, vectors can be returned normally like any other variable from a function. Below code snippet is valid:
+int func()
+{
+    vector<int> vec;
+
+    return vec; // This is valid
+}
+Default values: Intially, vectors are intialized with default values. If a vector of type int is created, all of the elements are intially intialized to 0, if a vector of boolean type is created, all elements will be false initlially.
+Copying Vectors: Vectors can be copied directly using the "=" operator like any other variable. Below code, copies content of vector v2 to v1.
+v1 = v2;
+
+Note: The above-listed advantages are some of the most popular advantages of the vectors because of which using vectors save a lot of extra time required to write programs. There are many other advantages of vectors which we will see in upcoming lessons.
+
+Vector Declaration and Traversal
+
+
+Vectors in C++ can be declared in different ways as explained below:
+Declaring vectors without size:
+vector<data_type> vector_name;
+
+This creates an empty vector named vector_name 
+of type data_type.
+Declaring vectors with size:
+vector<data_type> vector_name(N);
+
+The above syntax created a vector named 
+vector_name of type data_type of size N 
+intially filled with default values.
+
+We can also fill the entire vector with an element of our choice at the time of declaration as shown below:
+vector<data_type> vector_name(N, val);
+
+The above syntax created a vector named 
+vector_name of type data_type of size N 
+intially filled with value val.
+
+Traversing vector using loop: Vectors can be traversed using loops by first calculating the size of the vector using the size() functions and then running a loop from first to the last index and accessing elements at every index.
+
+Accessing Vector Elements:
+Just like arrays, elements in vectors are stored at contiguous memory locations and can be accessed directly using indexes. An index in vectors ranges from 0 to size-1. For Example, vec[4] gives us the 5th element present in the vector.
+
+Below is a sample program to traverse vectors using for loop:
+
+Output:
+10 5 20
+
+Traversing vectors using modified for loop: If we want to traverse the complete vector and print all of the values without modifying them, we can do this simply as:
+for(data_type x : v)
+    cout<< x;
+
+data_type is the type of data stored in the vector
+x is the loop variable 
+v is the actual vector
